@@ -65,7 +65,7 @@ function App() {
 function highlightDifferences(obj1, obj2) {
   if (typeof obj1 === 'object' && typeof obj2 === 'object' && obj1 !== null && obj2 !== null) {
     if (Array.isArray(obj1) && Array.isArray(obj2)) {
-      return obj1.map((item, index) => highlightDifferences(item, obj2[index])); // Handle arrays recursively
+      return obj1.map((item, index) => highlightDifferences(item, obj2[index]));
     } else {
       const keys = new Set([...Object.keys(obj1), ...Object.keys(obj2)]);
       const result = {};
@@ -78,19 +78,19 @@ function highlightDifferences(obj1, obj2) {
           result[key] = {
             result1: value1 !== undefined ? value1 : null,
             result2: value2 !== undefined ? value2 : null
-          }; // Record both differing values
+          };
         }
       });
 
-      return result; // Return the result object highlighting differences
+      return result;
     }
   }
 
   if (obj1 !== obj2) {
-    return { result1: obj1, result2: obj2 }; // Return if primitive values differ
+    return { result1: obj1, result2: obj2 };
   }
 
-  return {}; // Return empty object if values are the same
+  return {};
 }
 
   const loadSample = () => {

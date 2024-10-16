@@ -46,7 +46,6 @@ form {
   align-items: center; /* Centers children horizontally */
   justify-content: center; /* Centers children vertically */
   gap: 10px; /* Adds space between elements */
-  min-height: 100vh; /* Ensures the form takes up full viewport height */
   width: 100%; /* Makes the form take full width */
   padding: 20px; /* Adds some padding for better spacing */
   box-sizing: border-box; /* Ensures padding doesn't affect width */
