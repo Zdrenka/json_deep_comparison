@@ -79,7 +79,7 @@ export class AppService {
   deepSort(value) {
     if (Array.isArray(value)) {
       return value
-        .map(this.deepSort) // Recursively sort items
+        .map((item) => this.deepSort(item)) // Use arrow function to preserve 'this'
         .sort((a, b) => {
           if (typeof a === 'object' && typeof b === 'object') {
             if (a.n && b.n) {
